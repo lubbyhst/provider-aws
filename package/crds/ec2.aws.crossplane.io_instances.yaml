@@ -608,6 +608,16 @@ spec:
                         - optional
                         - required
                         type: string
+                      instanceMetadataTags:
+                        description: "The parameter allow or deny access to tags in instance
+                          metadata. When allowed, all tags on an instance are available via 
+                          the instance metadata.Default is disabled.
+                          For more information, see Work with instance tags in instance 
+                          metadata (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS)."
+                        enum:
+                          - enabled
+                          - disabled
+                        type: string
                     required:
                     - httpTokens
                     type: object

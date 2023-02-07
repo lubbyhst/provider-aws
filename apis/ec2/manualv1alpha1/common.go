@@ -387,6 +387,16 @@ type InstanceMetadataOptionsRequest struct {
 	// not available.
 	// +kubebuilder:validation:Enum=optional;required
 	HTTPTokens string `json:"httpTokens"`
+
+	// The parameter allow or deny access to tags in instance metadata.
+	// If the parameter is not specified, the default state is disabled.
+	// If you specify a value of enabled, you will be able to access your instance tags
+	// from instance metadata.
+	// If you specify a value of disabled, you will not be able to access your instance
+	// tags from instance metadata.
+	// +optional
+	// +kubebuilder:validation:Enum=enabled;disabled
+	InstanceMetadataTags string `json:"instanceMetadataTags"`
 }
 
 // InstanceNetworkInterface describes a network interface.
