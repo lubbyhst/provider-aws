@@ -648,6 +648,7 @@ func TestGenerateEC2RunInstancesInput(t *testing.T) {
 					HTTPEndpoint:            string(types.InstanceMetadataEndpointStateEnabled),
 					HTTPPutResponseHopLimit: aws.Int32(0),
 					HTTPTokens:              string(types.HttpTokensStateOptional),
+					InstanceMetadataTags:    string(types.InstanceMetadataTagsStateEnabled),
 				},
 				Monitoring: &manualv1alpha1.RunInstancesMonitoringEnabled{
 					Enabled: aws.Bool(false),
@@ -793,6 +794,7 @@ func TestGenerateEC2RunInstancesInput(t *testing.T) {
 					HttpEndpoint:            types.InstanceMetadataEndpointStateEnabled,
 					HttpPutResponseHopLimit: aws.Int32(0),
 					HttpTokens:              types.HttpTokensStateOptional,
+					InstanceMetadataTags:    types.InstanceMetadataTagsStateEnabled,
 				},
 				Monitoring: &types.RunInstancesMonitoringEnabled{
 					Enabled: aws.Bool(false),

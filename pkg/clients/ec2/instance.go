@@ -23,7 +23,6 @@ import (
 	"github.com/aws/aws-sdk-go-v2/aws"
 	ec2 "github.com/aws/aws-sdk-go-v2/service/ec2"
 	"github.com/aws/aws-sdk-go-v2/service/ec2/types"
-	"github.com/aws/smithy-go"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 	"github.com/crossplane-contrib/provider-aws/apis/ec2/manualv1alpha1"
@@ -483,6 +482,7 @@ func GenerateInstanceMetadataOptionsRequest(opts *types.InstanceMetadataOptionsR
 			HTTPEndpoint:            string(opts.HttpEndpoint),
 			HTTPPutResponseHopLimit: opts.HttpPutResponseHopLimit,
 			HTTPTokens:              string(opts.HttpTokens),
+			InstanceMetadataTags:    string(opts.InstanceMetadataTags),
 		}
 	}
 	return nil
